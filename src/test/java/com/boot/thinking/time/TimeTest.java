@@ -19,7 +19,7 @@ public class TimeTest {
     @Test
     public void Mytest(){
         //string转localtime
-        String date = "2019-04-07T18:00:00";
+        String date = "2019-04-07T20:00:00";
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
         LocalDateTime localDateTime = LocalDateTime.parse(date,df);
         Date date1 = new Date();
