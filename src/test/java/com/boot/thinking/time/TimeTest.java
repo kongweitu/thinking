@@ -28,16 +28,5 @@ public class TimeTest {
         System.out.println(LocalDateTime.now());
 
     }
-    @Test
-    public void listToSet(){
-        List list = new ArrayList();
-        list.add("kong");
-        list.add("kong");
-        list.add("kong");
-        list.add("kong");
-        list.add("wei");
-        list.add("tu");
-        System.out.println(list);
-        System.out.println(new ArrayList<>(new LinkedHashSet<>(list)));
-    }
+
 }
