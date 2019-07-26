@@ -6,5 +6,25 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC
     username: root
     password: root
+  kafka:
+    bootstrap-servers: 10.1.31.60:9092,10.1.31.61:9092,10.1.31.68:9092
+    producer:
+      retries: 0
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        linger.ms: 1
 
+    consumer:
+      group-id: noc
+      enable-auto-commit: false
+      auto-commit-interval: 100ms
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        session.timeout.ms: 15000
+      listener:
+        ack-mode: manual_immediate
 
