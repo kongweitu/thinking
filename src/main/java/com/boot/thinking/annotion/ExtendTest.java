@@ -1,5 +1,6 @@
 package com.boot.thinking.annotion;
 
+import com.boot.thinking.entity.Employee;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 @Component

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.thinking.LdmMapper1">
+
+    <update id="updateLdmContentStatus" parameterType="com.boot.thinking.entity.LdmContent">
+        update ldm_content
+        <trim prefix="set" suffixOverrides=",">
+            <if test="waitUuid != null and waitUuid != ''">
+                waitUUID=#{waitUuid},
+            </if>
+            <if test="tmsip != null and tmsip  != ''">
+                tmsip=#{tmsip},
+            </if>
+            <if test="kdmXml != null and kdmXml  != ''">
+                kdmXml=#{content_html},
+            </if>
+            <if test="errorDesc != null and errorDesc  != ''">
+                errorDesc=#{errorDesc},
+            </if>
+            <if test="status != null and status  != ''">
+                status=#{status},
+            </if>
+            <if test="errorCode!= null and errorCode  != ''">
+                errorCode=#{errorCode}
+            </if>
+            where ldmUUID=#{ldmUuid}
+        </trim>
+    </update>
+    <select id="queryUser" resultType="com.boot.thinking.entity.User">
+        select * from user user.createTime>
+    </select>
+    <insert id="saveLdm" >
+        insert into ldm_content(ldm_content.ldmUUID,ldm_content.kdmXml)values (#{ldmUuid},#{kdmXml})
+    </insert>
+
+</mapper>
