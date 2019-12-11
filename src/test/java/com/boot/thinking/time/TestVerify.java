@@ -3,6 +3,7 @@ package com.boot.thinking.time;
 import com.boot.thinking.util.VerifyCodeUtil;
 import com.boot.thinking.util.VerifyImageUtil;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,12 +18,12 @@ import java.util.Random;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class TestVerify {
+    @Test
+    public  void testCode() throws IOException {
+        String test="jsigjkjdkjkd";
+        String AA= "kd";
+        System.out.println(StringUtils.contains(test,AA));
 
-    private static void testCode() throws IOException {
-        byte[] newImages = VerifyCodeUtil.getVerifyImg();
-        FileOutputStream fout = new FileOutputStream("C:/Users/Administrator/Desktop/verigy.png");
-        fout.write(newImages);
-        fout.close();
 
     }
     @Test
